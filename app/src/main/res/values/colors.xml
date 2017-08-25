@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_light">#C5CAE9</color>
+    <color name="accent">#FF4081</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="error">#F44336</color>
+    <color name="transparent">#00000000</color>
+
+    <!--temp_color-->
+    <color name="very_hot">#F44336</color>
+    <color name="hot">#FF9800</color>
+    <color name="warm">#FFEB3B</color>
+    <color name="autumn">#8BC34A</color>
+    <color name="zero">#212121</color>
+    <color name="cold">#00BCD4</color>
+    <color name="winter">#2196F3</color>
+    <color name="very_cold">#3F51B5</color>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">OpenWeather</string>
+
+    <string name="city_error">Города не выбраны</string>
+    <string name="tv_speed">Скорость ветра (м/с):</string>
+    <string name="tv_country">Страна: </string>
+    <string name="search">Поиск…</string>
+    <string name="loading">Загрузка</string>
+    <string name="error">Ошибка</string>
+    <string name="btn_success_response">Отлично</string>
+    <!--deg-->
+    <string name="N">С</string>
+    <string name="NE">СВ</string>
+    <string name="NW">СЗ</string>
+    <string name="S">Ю</string>
+    <string name="SE">ЮВ</string>
+    <string name="SW">ЮЗ</string>
+    <string name="W">З</string>
+    <string name="E">В</string>
+</resources>

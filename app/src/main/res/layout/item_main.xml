@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:layout_marginEnd="@dimen/item_margin"
+    android:layout_marginLeft="@dimen/item_margin"
+    android:layout_marginRight="@dimen/item_margin"
+    android:layout_marginStart="@dimen/item_margin"
+    android:paddingBottom="@dimen/padding"
+    android:paddingTop="@dimen/padding">
+
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/line1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.5" />-->
+
+    <!--<android.support.constraint.Guideline-->
+        <!--android:id="@+id/line"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--app:layout_constraintGuide_percent="0.8" />-->
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text.24"
+        android:textStyle="bold"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintBottom_toTopOf="@+id/tv_speed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/temp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Kazan" />
+
+    <!--<android.support.constraint.ConstraintLayout-->
+    <!--android:id="@+id/container"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toLeftOf="@id/line"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/city"-->
+    <!--&gt;-->
+
+
+    <TextView
+        android:id="@+id/tv_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding"
+        android:text="@string/tv_speed"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/speed"
+        app:layout_constraintTop_toBottomOf="@id/city"
+        />
+
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:paddingTop="@dimen/padding"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text.18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_speed"
+        app:layout_constraintRight_toLeftOf="@+id/iv_deg"
+        app:layout_constraintTop_toBottomOf="@id/city"
+        tools:text="4" />
+
+    <ImageView
+        android:id="@+id/iv_deg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="0dp"
+        android:paddingTop="@dimen/padding"
+        android:scaleX="-1"
+        android:tint="@color/primary_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/speed"
+        app:layout_constraintRight_toLeftOf="@+id/deg"
+        app:layout_constraintTop_toBottomOf="@id/city"
+        tools:src="@drawable/ic_call_received_black_18dp" />
+
+
+    <TextView
+        android:id="@+id/deg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:paddingTop="@dimen/padding"
+        android:textColor="@color/primary_dark"
+        android:textSize="@dimen/text.16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_deg"
+        app:layout_constraintRight_toLeftOf="@+id/temp"
+        app:layout_constraintTop_toBottomOf="@id/city"
+        tools:text="ЮЗ" />
+
+
+    <!--</android.support.constraint.ConstraintLayout>-->
+
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text.24"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/delete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="+24"
+        tools:textColor="@color/hot" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:clickable="true"
+        android:src="@drawable/ic_clear_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

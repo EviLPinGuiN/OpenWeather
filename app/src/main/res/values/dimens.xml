@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin_rv">64dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_items_margin">8dp</dimen>
+    <dimen name="item_margin">4dp</dimen>
+    <dimen name="padding">4dp</dimen>
+    <dimen name="swipe_margin">6dp</dimen>
+    <dimen name="item_height">56dp</dimen>
+    <dimen name="fab_margin">32dp</dimen>
+
+    <dimen name="text.12">12sp</dimen>
+    <dimen name="text.13">13sp</dimen>
+    <dimen name="text.14">14sp</dimen>
+    <dimen name="text.15">15sp</dimen>
+    <dimen name="text.16">16sp</dimen>
+    <dimen name="text.17">17sp</dimen>
+    <dimen name="text.18">18sp</dimen>
+    <dimen name="text.20">20sp</dimen>
+    <dimen name="text.22">22sp</dimen>
+    <dimen name="text.24">24sp</dimen>
+    <dimen name="text.32">32sp</dimen>
+
+
+</resources>

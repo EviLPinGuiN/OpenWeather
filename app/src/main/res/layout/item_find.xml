@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:layout_margin="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/find_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/card_items_margin"
+        android:layout_marginStart="@dimen/card_items_margin"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text.24"
+        android:textStyle="bold"
+        tools:text="Kazan" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/find_city"
+        android:layout_marginLeft="@dimen/card_items_margin"
+        android:layout_marginStart="@dimen/card_items_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_country"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/text.16" />
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/card_items_margin"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/text.18"
+            tools:text="RU" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/find_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/card_items_margin"
+        android:layout_marginRight="@dimen/card_items_margin"
+        android:textSize="@dimen/text.24"
+        android:textStyle="bold"
+        tools:text="+24"
+        tools:textColor="@color/hot" />
+
+
+</RelativeLayout>
