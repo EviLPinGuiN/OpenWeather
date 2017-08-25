@@ -17,6 +17,12 @@ public interface WeatherRepository {
 
     Observable<List<Response>> getWeathers();
 
+//    Observable<List<Response>> getAllCity();
+
     Observable<List<Response>> findCity(String s);
+
+    void addCity(Response response);
+
+    void deleteCity(int id);
 
 }

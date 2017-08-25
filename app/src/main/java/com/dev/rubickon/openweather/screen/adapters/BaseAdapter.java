@@ -4,7 +4,9 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
+import com.dev.rubickon.openweather.model.Response;
 import com.dev.rubickon.openweather.widget.EmptyRecyclerView;
 
 import java.util.ArrayList;
@@ -17,6 +19,9 @@ import java.util.List;
 public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends RecyclerView.Adapter<VH> {
 
     private final List<T> mItems = new ArrayList<>();
+
+    @Nullable
+    private OnItemClickListener mOnItemClickListener;
 
     @Nullable
     private EmptyRecyclerView mRecyclerView;
@@ -59,7 +64,7 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
     @Override
     public void onBindViewHolder(VH holder, int position) {
         holder.itemView.setTag(position);
-//        holder.itemView.setOnClickListener(mInternalListener);
+        holder.itemView.setOnClickListener(mInternalListener);
     }
 
 //    public void setOnItemClickListener(@Nullable OnItemClickListener<T> onItemClickListener) {
@@ -76,11 +81,27 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
         return mItems.size();
     }
 
-//    public interface OnItemClickListener<T> {
-//
-//        void onItemClick(@NonNull T item);
-//
-//    }
+
+
+
+    private final View.OnClickListener mInternalListener = (view) -> {
+        if (mOnItemClickListener != null) {
+            int position = (int) view.getTag();
+            Response item = (Response) mItems.get(position);
+            mOnItemClickListener.onItemClick(item);
+        }
+    };
+
+
+    public void setOnItemClickListener(@Nullable OnItemClickListener onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+
+        void onItemClick(@NonNull Response item);
+
+    }
 
 
 

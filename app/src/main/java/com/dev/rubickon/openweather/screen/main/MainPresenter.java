@@ -16,15 +16,17 @@ public class MainPresenter {
         this.mView = mView;
     }
 
-    public void init(String ids){
+    public void update(){
         RepositoryProvider.provideWeatherRepository()
-                .getWeathers(ids)
+                .getWeathers()
                 .subscribe(mView::showWeather, mView::showError);
-
     }
 
-    public void update(){
 
+    public void delete(int id){
+        RepositoryProvider.provideWeatherRepository()
+                .deleteCity(id);
+        update();
     }
 
 }

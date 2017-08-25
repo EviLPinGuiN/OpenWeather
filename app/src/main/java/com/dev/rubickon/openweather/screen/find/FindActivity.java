@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.dev.rubickon.openweather.R;
 import com.dev.rubickon.openweather.model.Response;
+import com.dev.rubickon.openweather.screen.adapters.BaseAdapter;
 import com.dev.rubickon.openweather.screen.adapters.FindAdapter;
 import com.dev.rubickon.openweather.utils.Constants;
 import com.dev.rubickon.openweather.widget.DividerItemDecoration;
@@ -27,7 +28,7 @@ import butterknife.ButterKnife;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class FindActivity extends AppCompatActivity implements FindView {
+public class FindActivity extends AppCompatActivity implements FindView, BaseAdapter.OnItemClickListener {
 
     //    @BindView(R.id.find_et)
 //    EditText mEditText;
@@ -70,7 +71,7 @@ public class FindActivity extends AppCompatActivity implements FindView {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this));
         mAdapter = getAdapter();
         mAdapter.attachToRecyclerView(mRecyclerView);
-//        mAdapter.setOnItemClickListener(this);
+        mAdapter.setOnItemClickListener(this);
     }
 
     private FindAdapter getAdapter() {
@@ -88,17 +89,22 @@ public class FindActivity extends AppCompatActivity implements FindView {
     }
 
     @Override
+    public void addCityInfo(@NonNull Response response) {
+        showDialog(Constants.DIALOG_KEY, getResources().getString(R.string.msg_success_response));
+    }
+
+
+
+    @Override
     public void onItemClick(@NonNull Response response) {
-//        presenter.onItemClick(item);
-//        showDialog(Constants.DIALOG_KEY, getResources().getString(R.string.msg_success_response));
+        presenter.onItemClick(response);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu, menu);
-
+        getMenuInflater().inflate(R.menu.menu_item, menu);
         MenuItem search = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
         search(searchView);
@@ -126,4 +132,13 @@ public class FindActivity extends AppCompatActivity implements FindView {
             toolbar.setNavigationOnClickListener(v -> onBackPressed());
         }
     }
+
+    private void showDialog(String key, String value){
+        Bundle args = new Bundle();
+        args.putString(key, value);
+        ResponseDialogFragment responseDialogFragment = new ResponseDialogFragment();
+        responseDialogFragment.setArguments(args);
+        responseDialogFragment.show(getSupportFragmentManager(), "response");
+    }
+
 }

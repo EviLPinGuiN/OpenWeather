@@ -27,4 +27,12 @@ public class FindPresenter {
                 .findCity(s);
     }
 
+    public  void onItemClick(Response response){
+        RepositoryProvider
+                .provideWeatherRepository()
+                .addCity(response);
+        mView.addCityInfo(response);
+    }
+
+
 }

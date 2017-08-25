@@ -1,6 +1,7 @@
 package com.dev.rubickon.openweather.screen.main;
 
 import android.support.annotation.NonNull;
+import android.view.View;
 
 import com.dev.rubickon.openweather.model.Response;
 
@@ -14,9 +15,7 @@ public interface MainView {
 
     void showWeather(@NonNull List<Response> items);
 
-    void updateWeather(@NonNull List<Response> items);
-
-    void deleteCity();
+    void deleteCity(View v);
 
     void showError(Throwable throwable);
 

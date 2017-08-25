@@ -75,7 +75,7 @@ public class FindItemHolder extends RecyclerView.ViewHolder {
         if (temp >= 30) {
             colorId = R.color.very_hot;
         }
-        String format = temp > 0 ? "+##.#" : temp < 0 ? "-##.#" : "#";
+        String format = temp > 0 ? "+##.#" : temp < 0 ? "##.#" : "#";
         mTemp.setText(new DecimalFormat(format).format(temp));
         mTemp.setTextColor(App.getContext().getResources().getColor(colorId));
     }

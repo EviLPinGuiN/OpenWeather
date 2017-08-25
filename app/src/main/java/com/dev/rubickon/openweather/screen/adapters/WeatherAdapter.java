@@ -1,7 +1,6 @@
 package com.dev.rubickon.openweather.screen.adapters;
 
 import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.dev.rubickon.openweather.model.Response;

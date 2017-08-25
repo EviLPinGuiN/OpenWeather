@@ -16,5 +16,5 @@ public interface FindView {
 
     void error(Throwable throwable);
 
-    void onItemClick(@NonNull Response response);
+    void addCityInfo(@NonNull Response response);
 }

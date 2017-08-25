@@ -45,12 +45,9 @@ public class MainActivity extends AppCompatActivity implements MainView, SwipeRe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mSwipeRefreshLayout.setOnRefreshListener(this);
-//        mLoadingView = LoadingDialog.view(getSupportFragmentManager());
         presenter = new MainPresenter(this);
         initRecycler();
-        presenter.init("524901,703448,2643743");
-
-
+        presenter.update();
     }
 
     private void initRecycler() {
@@ -60,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements MainView, SwipeRe
         mRecyclerView.setEmptyView(mEmptyView);
         mAdapter = getAdapter();
         mAdapter.attachToRecyclerView(mRecyclerView);
-//        mAdapter.setOnItemClickListener(this);
     }
 
     private WeatherAdapter getAdapter() {
@@ -70,16 +66,13 @@ public class MainActivity extends AppCompatActivity implements MainView, SwipeRe
     @Override
     public void showWeather(@NonNull List<Response> responses) {
         mAdapter.changeDataSet(responses);
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 
-    @Override
-    public void updateWeather(@NonNull List<Response> items) {
-
-    }
 
     @Override
-    public void deleteCity() {
-
+    public void deleteCity(View v) {
+        presenter.delete((int) v.getTag());
     }
 
 
@@ -87,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements MainView, SwipeRe
     public void showError(Throwable throwable) {
         String message = throwable.getMessage();
         System.out.print(message);
-
     }
 
 
@@ -100,5 +92,12 @@ public class MainActivity extends AppCompatActivity implements MainView, SwipeRe
     public void findPage(View v){
         Intent find = new Intent(this, FindActivity.class);
         startActivity(find);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSwipeRefreshLayout.setRefreshing(true);
+        presenter.update();
     }
 }

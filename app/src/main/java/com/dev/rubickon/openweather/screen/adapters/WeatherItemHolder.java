@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,7 +53,7 @@ public class WeatherItemHolder extends RecyclerView.ViewHolder {
         mSpeed.setText(String.valueOf(response.getWind().getSpeed()));
         bindDeg(response.getWind().getDeg());
         bindTemp(response.getMain().getTemp());
-        mDelete.setTag(String.valueOf(response.getId()));
+        mDelete.setTag(response.getId());
     }
 
     private void bindDeg(double deg) {
@@ -128,7 +127,7 @@ public class WeatherItemHolder extends RecyclerView.ViewHolder {
         if (temp >= 30) {
             colorId = R.color.very_hot;
         }
-        String format = temp > 0 ? "+##.#" : temp < 0 ? "-##.#" : "#";
+        String format = temp > 0 ? "+##.#" : temp < 0 ? "##.#" : "#";
         mTemp.setText(new DecimalFormat(format).format(temp));
         mTemp.setTextColor(App.getContext().getResources().getColor(colorId));
     }

@@ -8,6 +8,7 @@
     <string name="loading">Загрузка</string>
     <string name="error">Ошибка</string>
     <string name="btn_success_response">Отлично</string>
+    <string name="msg_success_response">Город успешно добавлен</string>
     <!--deg-->
     <string name="N">С</string>
     <string name="NE">СВ</string>
